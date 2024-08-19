@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int a = 20;
+            int b = 10;
+            int ggT = MyMath.Calc_ggT(a, b);
+            int kgV = MyMath.Calc_kgV(a, b);
+            Console.WriteLine(ggT);
+            Console.WriteLine(kgV);
+            
         }
     }
 }
