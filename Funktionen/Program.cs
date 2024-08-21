@@ -13,9 +13,22 @@
                     Console.WriteLine("Programm wird beendet");
                     break;
                 }
+                int a = 0;
+                int b = 0;
 
-                int a = ReadInt();
-                int b = ReadInt();
+                if (s != "A")
+                {
+                     a = ReadInt();
+                     b = ReadInt();
+                } else
+                {
+                    Console.WriteLine("Anzahl Werte?");
+                    int anzahlWerte = ReadInt();
+                    int[] values = ReadValues(anzahlWerte);
+                    double average = MyMath.Average(values);
+                    Console.WriteLine($"Der Mittelwert der eingegebenen Parametern beträgt: {average}");
+                    Console.WriteLine($"Die kleinste Zahl ist: {MyMath.Min(values)}");
+                }
                 switch (s)
                 {
                     case "ggT":
@@ -62,6 +75,7 @@
             Console.WriteLine("\t kgV für gemeinsames Vielfach");
             Console.WriteLine("\t e für Ende");
             Console.WriteLine("\t ggT_r für rekursiven gemeinsamen Teiler");
+            Console.WriteLine("\t A für Array");
 
         }
         static string ReadSelection()
@@ -70,11 +84,28 @@
             do
             {
                 s = Console.ReadLine();
-            } while (s != "kgV" && s != "ggT" && s != "e" && s != "ggT_r");
+            } while (s != "kgV" && s != "ggT" && s != "e" && s != "ggT_r" && s != "A");
 
             Console.WriteLine("Danke");
             return s;
+
+            
         }
+        static int[] ReadValues(int length)
+        {
+            int i = 0;
+            int[] values = new int[length];
+            while (i < length)
+            {
+                values[i++] = ReadInt();
+            }
+            return values;
+        }
+
+
+
+
+
 
     }
 }

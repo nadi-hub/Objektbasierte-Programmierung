@@ -32,5 +32,30 @@ namespace Funktionen
                 return Calc_ggT_r(b, a%b);
 
         }
+        
+        public static double Average(int[] numbers)
+        {
+            int sum = 0;
+            foreach (int n in numbers)
+            {
+                sum += n;
+            }
+            return sum / numbers.Length;
+
+        }
+
+        public static int Min(int[] numbers)
+        {
+            int min = int.MaxValue;
+            foreach (int n in numbers)
+            {
+                if (n <min)
+                {
+                    min = n;
+                }
+            }
+            return min;
+
+        }
     }
 }
